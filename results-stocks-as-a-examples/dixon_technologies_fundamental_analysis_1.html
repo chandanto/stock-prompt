@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dixon Technologies — Fundamental Analysis</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8fafc;color:#1e293b;padding:16px}
+.wrap{max-width:860px;margin:0 auto;padding:8px 0 24px}
+.header{background:#fff;border:0.5px solid #e2e8f0;border-radius:12px;padding:14px 18px;margin-bottom:10px}
+.hrow{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.hname{font-size:18px;font-weight:600;color:#1e293b}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:500}
+.b-blue{background:#E6F1FB;color:#0C447C}
+.b-green{background:#dcfce7;color:#15803d}
+.b-amber{background:#fef9c3;color:#b45309}
+.b-red{background:#fee2e2;color:#b91c1c}
+.b-gray{background:#f1f5f9;color:#475569}
+.b-mod{background:#fef9c3;color:#b45309}
+.hcmp{margin-left:auto;font-size:15px;font-weight:600;color:#1e293b}
+.conf-bar{height:6px;border-radius:3px;background:#e2e8f0;margin:6px 0;width:120px;display:inline-block;vertical-align:middle}
+.conf-fill{height:6px;border-radius:3px;background:#1e40af}
+.tabbar{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px}
+.tab{padding:7px 12px;border-radius:8px;border:0.5px solid #e2e8f0;font-size:12px;font-weight:500;cursor:pointer;background:#f1f5f9;color:#475569;transition:all 0.15s}
+.tab:hover{background:#e2e8f0}
+.tab.active{background:#1e40af;color:#fff;border-color:#1e40af}
+.card{background:#fff;border:0.5px solid #e2e8f0;border-radius:12px;padding:16px 18px;margin-bottom:10px}
+.sec-title{font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.metrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px;margin-bottom:10px}
+.metcard{background:#f8fafc;border-radius:8px;padding:12px;text-align:center}
+.metlbl{font-size:11px;color:#64748b;margin-bottom:4px}
+.metval{font-size:16px;font-weight:600;color:#1e293b}
+.metsub{font-size:10px;color:#94a3b8;margin-top:2px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#f8fafc;color:#64748b;padding:7px 10px;text-align:left;font-weight:600;border-bottom:0.5px solid #e2e8f0}
+td{padding:7px 10px;border-bottom:0.5px solid #e2e8f0;color:#1e293b}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#f8fafc}
+.verdict-mod{background:#fef9c3;border:1.5px solid #d97706;border-radius:12px;padding:18px 20px;margin-bottom:12px}
+.vt{font-size:20px;font-weight:600;margin-bottom:6px;color:#b45309}
+.vdesc{font-size:13px;color:#78350f;line-height:1.6}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.mini-card{background:#f8fafc;border-radius:8px;padding:12px}
+.mc-title{font-size:12px;font-weight:600;margin-bottom:8px}
+.bullet{font-size:12px;color:#334155;line-height:1.7}
+.blue-card{background:#E6F1FB;border-radius:8px;padding:14px;font-size:12px;color:#0C447C;line-height:1.7}
+.footer{font-size:10px;color:#94a3b8;line-height:1.6;padding:12px 18px;border-top:0.5px solid #e2e8f0;margin-top:4px}
+.highlight-row td{background:#E6F1FB!important;font-weight:600;color:#0C447C}
+.na{background:#fff7ed;color:#c2410c;border-radius:4px;padding:2px 8px;font-size:11px}
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:2px 2px 2px 0}
+.t-quality{background:#E6F1FB;color:#0C447C}
+.t-growth{background:#dcfce7;color:#15803d}
+.t-cyclical{background:#FAEEDA;color:#633806}
+@media(max-width:600px){.three-col,.two-col{grid-template-columns:1fr}.metrow{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+  <div class="hrow">
+    <span class="hname">Dixon Technologies (India) Ltd</span>
+    <span class="badge b-blue">EMS / Consumer Electronics</span>
+    <span class="badge b-gray">NSE: DIXON · BSE: 540699</span>
+    <span class="badge b-mod">Midcap</span>
+    <span class="hcmp">₹9,887 <span style="font-size:11px;color:#64748b;font-weight:400">CMP (30 Mar 2026)</span></span>
+  </div>
+  <div style="margin-top:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <span style="font-size:11px;color:#64748b">Data confidence:</span>
+    <div class="conf-bar"><div class="conf-fill" style="width:90%"></div></div>
+    <span class="badge b-green" style="font-size:10px">HIGH · 10/12 live</span>
+    <span style="font-size:11px;color:#94a3b8">Updated: 30 Mar 2026 · Sources: Screener.in · ICICI Direct · BSE · Dhan · Business Standard</span>
+  </div>
+</div>
+
+<div class="tabbar">
+  <div class="tab" onclick="showTab(0)">Overview</div>
+  <div class="tab" onclick="showTab(1)">Valuation</div>
+  <div class="tab" onclick="showTab(2)">Growth</div>
+  <div class="tab" onclick="showTab(3)">Health</div>
+  <div class="tab" onclick="showTab(4)">Returns</div>
+  <div class="tab" onclick="showTab(5)">Peers</div>
+  <div class="tab" onclick="showTab(6)">Ownership</div>
+  <div class="tab active" onclick="showTab(7)">View ★</div>
+</div>
+
+<!-- TAB 0: OVERVIEW -->
+<div id="t0" style="display:none">
+  <div class="card">
+    <div class="sec-title">Key Metrics at a Glance</div>
+    <div class="metrow">
+      <div class="metcard"><div class="metlbl">CMP</div><div class="metval">₹9,887</div><div class="metsub">30 Mar 2026</div></div>
+      <div class="metcard"><div class="metlbl">Market Cap</div><div class="metval">₹60,113 Cr</div><div class="metsub">Screener.in</div></div>
+      <div class="metcard"><div class="metlbl">52W High</div><div class="metval">₹18,472</div><div class="metsub">NSE</div></div>
+      <div class="metcard"><div class="metlbl">52W Low</div><div class="metval">₹9,620</div><div class="metsub">NSE</div></div>
+    </div>
+    <div class="metrow">
+      <div class="metcard"><div class="metlbl">Face Value</div><div class="metval">₹2</div></div>
+      <div class="metcard"><div class="metlbl">Sector</div><div class="metval" style="font-size:12px">EMS / Consumer Elec.</div></div>
+      <div class="metcard"><div class="metlbl">Div Yield</div><div class="metval">0.08%</div><div class="metsub">FY25: ₹8/share</div></div>
+      <div class="metcard"><div class="metlbl">Stock P/E (TTM)</div><div class="metval">~38–44x</div><div class="metsub">Screener / GuruFocus</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="sec-title">About the Company</div>
+    <div style="font-size:13px;color:#1e293b;line-height:1.7;margin-bottom:10px">
+      Dixon Technologies is India's largest Electronics Manufacturing Services (EMS) company. Incorporated in 1993, listed on NSE/BSE in 2017. It manufactures mobile phones, LED TVs, washing machines, lighting products, wearables, CCTV, and IT hardware for global brands including Xiaomi, Motorola, Oppo, Samsung, Philips, and HP. Mobile & EMS is now 84% of revenue (up from 43% in FY23).
+    </div>
+    <div style="font-size:12px;color:#64748b">HQ: Noida, UP · Auditor: Singhi &amp; Co + SN Dhawan &amp; Co LLP · ISIN: INE935N01020</div>
+  </div>
+  <div class="card">
+    <div class="sec-title">Quick Metrics Strip</div>
+    <div class="metrow">
+      <div class="metcard"><div class="metlbl">Revenue CAGR (3yr)</div><div class="metval">~54%</div><div class="metsub">FY22–FY25 · ICICI Direct</div></div>
+      <div class="metcard"><div class="metlbl">Profit CAGR (3yr)</div><div class="metval">~57%</div><div class="metsub">FY22–FY25 · ICICI Direct</div></div>
+      <div class="metcard"><div class="metlbl">ROE (FY25)</div><div class="metval">32.8%</div><div class="metsub">Screener.in</div></div>
+      <div class="metcard"><div class="metlbl">D/E (FY25)</div><div class="metval">0.19x</div><div class="metsub">StockAnalysis</div></div>
+      <div class="metcard"><div class="metlbl">Div Yield</div><div class="metval">0.08%</div><div class="metsub">Screener.in</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 1: VALUATION -->
+<div id="t1" style="display:none">
+  <div class="card">
+    <div class="sec-title">Sector: EMS / Consumer Electronics — Primary Metric: P/E</div>
+    <table>
+      <tr><th>Metric</th><th>Current</th><th>Sector Avg</th><th>5-Yr Avg (DIXON)</th><th>Signal</th><th>Why this metric?</th></tr>
+      <tr><td>P/E (TTM)</td><td>~38–44x</td><td>~60–75x</td><td>~92x (GuruFocus median)</td><td><span class="badge b-green">CHEAP vs history</span></td><td>EMS peers priced on growth; Dixon at multi-year low P/E</td></tr>
+      <tr><td>EV/EBITDA</td><td>~36–57x</td><td>~45–70x</td><td>~70x (5yr avg)</td><td><span class="badge b-green">BELOW avg</span></td><td>Capital-light EMS; EBITDA margins thin, so EV/EBITDA high</td></tr>
+      <tr><td>P/B</td><td>~15x</td><td>~10–20x</td><td>~20–25x</td><td><span class="badge b-green">BELOW 5yr avg</span></td><td>Asset-light model; high returns justify premium P/B</td></tr>
+      <tr><td>P/Sales</td><td>~1.5x</td><td>~1.5–2x</td><td>~2.5x</td><td><span class="badge b-green">LOW</span></td><td>Revenue-scale EMS; thin margins mean P/Sales is low</td></tr>
+    </table>
+    <div style="margin-top:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <span style="font-size:13px;font-weight:600;color:#1e293b">Overall Valuation:</span>
+      <span class="badge b-green" style="font-size:12px;padding:4px 14px">UNDERVALUED vs own history · FAIRLY VALUED vs peers</span>
+    </div>
+    <div style="margin-top:10px;font-size:12px;color:#64748b;line-height:1.6">
+      Stock has corrected ~46% from its 52W high of ₹18,472. P/E at 38–44x is 59% below its 10-year median of ~92x. Valuation percentile: LOW (vs own history). However, near-term earnings headwinds (DRAM prices, PLI expiry) mean the re-rating catalyst is execution-dependent.
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:#94a3b8">Sources: GuruFocus, Screener.in, ICICI Direct, Investing.com · as of Mar 2026</div>
+  </div>
+  <div class="card">
+    <div class="sec-title">Valuation Context</div>
+    <div style="font-size:12px;color:#1e293b;line-height:1.7">
+      Dixon's stock peaked at ₹18,472 (Sep 2024) and has since fallen ~46% to ~₹9,887 due to: (1) DRAM price surge impacting smartphone margins, (2) PLI scheme expiry in Mar 2026, (3) delayed Vivo &amp; HKC JV government approvals. HKC JV approval was received on 10 Mar 2026, removing a key overhang. Analyst consensus (29 buy calls): 12-month average target ₹13,151 — implying ~33% upside from current levels.
+    </div>
+  </div>
+</div>
+
+<!-- TAB 2: GROWTH -->
+<div id="t2" style="display:none">
+  <div class="card">
+    <div class="sec-title">Revenue Growth</div>
+    <table>
+      <tr><th>Period</th><th>Revenue (₹ Cr)</th><th>YoY Growth</th><th>CAGR</th></tr>
+      <tr><td>FY22</td><td>10,689</td><td>+65.9%</td><td rowspan="4" style="vertical-align:middle;font-weight:600;color:#15803d">3yr CAGR ~54%<br>(FY22–FY25)</td></tr>
+      <tr><td>FY23</td><td>12,192</td><td>+14.0%</td></tr>
+      <tr><td>FY24</td><td>17,691</td><td>+45.1%</td></tr>
+      <tr><td>FY25</td><td>38,860</td><td>+120% (Mobile surge)</td></tr>
+      <tr><td>9MFY26 (run-rate)</td><td>~48,655 (TTM)</td><td>~25% YoY TTM</td><td>5yr CAGR: ~43% (FY20–FY25)</td></tr>
+    </table>
+    <div style="margin-top:6px;font-size:11px;color:#94a3b8">Source: ICICI Direct, Screener.in</div>
+  </div>
+  <div class="card">
+    <div class="sec-title">Net Profit Growth</div>
+    <table>
+      <tr><th>Period</th><th>Net Profit (₹ Cr)</th><th>YoY Growth</th></tr>
+      <tr><td>FY22</td><td>182</td><td>—</td></tr>
+      <tr><td>FY23</td><td>255</td><td>+40%</td></tr>
+      <tr><td>FY24</td><td>368</td><td>+44%</td></tr>
+      <tr><td>FY25</td><td>706</td><td>+92%</td></tr>
+      <tr><td>TTM (FY26 est.)</td><td>~1,811 (Screener)</td><td>~156% YoY</td></tr>
+    </table>
+    <div style="margin-top:6px;font-size:11px;color:#94a3b8">Note: TTM profit includes ₹910 Cr other income · Screener.in, ICICI Direct</div>
+  </div>
+  <div class="card">
+    <div class="sec-title">EPS — Last 8 Quarters</div>
+    <table>
+      <tr><th>Quarter</th><th>EPS (₹)</th><th>YoY Change</th></tr>
+      <tr><td>Dec 2023</td><td>~24.5</td><td>—</td></tr>
+      <tr><td>Mar 2024</td><td>~22.0</td><td>—</td></tr>
+      <tr><td>Jun 2024</td><td>~37.1</td><td>+~80% YoY</td></tr>
+      <tr><td>Sep 2024</td><td>~76.5</td><td>+~200% YoY</td></tr>
+      <tr><td>Dec 2024</td><td>~69.1</td><td>+~182% YoY</td></tr>
+      <tr><td>Mar 2025</td><td>~100.0 (est.)</td><td>+~350% YoY</td></tr>
+      <tr><td>Jun 2025 (Q1 FY26)</td><td>~123.6</td><td>+~233% YoY</td></tr>
+      <tr><td>Dec 2025 (Q3 FY26)</td><td>53.06 (reported)</td><td>+68.8% YoY (profit)</td></tr>
+    </table>
+    <div style="margin-top:6px;font-size:11px;color:#94a3b8">Source: Dhan, INDmoney · FY25 full-year EPS: ₹205.70 per Dhan · TTM EPS: ~₹275 per GuruFocus</div>
+  </div>
+  <div class="card">
+    <div class="sec-title">Margin Trend — EBITDA &amp; Net Profit</div>
+    <table>
+      <tr><th>Year</th><th>EBITDA Margin</th><th>Net Profit Margin</th></tr>
+      <tr><td>FY21</td><td>5.1%</td><td>~2.0%</td></tr>
+      <tr><td>FY22</td><td>3.5%</td><td>1.7%</td></tr>
+      <tr><td>FY23</td><td>4.2%</td><td>2.1%</td></tr>
+      <tr><td>FY24</td><td>3.9%</td><td>2.1%</td></tr>
+      <tr><td>FY25</td><td>3.9%</td><td>1.8%</td></tr>
+    </table>
+    <div style="margin-top:8px;font-size:12px;color:#64748b">EBITDA margins are structurally thin (3.5–4.5%) — typical for high-volume EMS. The value is in ROCE and growth velocity, not margins. Backward integration (display/camera modules) aims to lift margins by 50–100 bps over FY27–28.</div>
+    <div style="margin-top:8px">
+      <span class="badge b-green" style="font-size:12px">ACCELERATING (Revenue &amp; Profit)</span>
+      <span class="badge b-amber" style="margin-left:6px;font-size:12px">MARGINS: STABLE-THIN</span>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 3: HEALTH -->
+<div id="t3" style="display:none">
+  <div class="card">
+    <div class="sec-title">Balance Sheet Health (Non-Banking)</div>
+    <table>
+      <tr><th>Metric</th><th>Value</th><th>Benchmark</th><th>Status</th></tr>
+      <tr><td>Debt-to-Equity</td><td>0.19x</td><td>&lt;1 = SAFE</td><td><span class="badge b-green">SAFE</span></td></tr>
+      <tr><td>Current Ratio</td><td>1.04x</td><td>&gt;1 = OK · &gt;1.5 = GOOD</td><td><span class="badge b-amber">WATCH (tight)</span></td></tr>
+      <tr><td>Balance Sheet</td><td>Net Debt-Free (FY25)</td><td>Positive net cash ideal</td><td><span class="badge b-green">HEALTHY</span></td></tr>
+      <tr><td>Interest Coverage</td><td><span class="na">🚩 DATA UNAVAILABLE</span></td><td>&gt;3x = HEALTHY</td><td>Verify at Screener.in</td></tr>
+      <tr><td>Free Cash Flow</td><td>Historically negative/mixed (high capex cycle)</td><td>Positive &amp; growing ideal</td><td><span class="badge b-amber">CONCERN (capex-heavy)</span></td></tr>
+    </table>
+    <div style="margin-top:8px;font-size:12px;color:#64748b">EV/FCF of ~413x suggests FCF is thin vs market cap — a normal feature of fast-growing capex-intensive EMS companies. Cash flow should improve as JV capex phases complete.</div>
+  </div>
+  <div class="card">
+    <div class="sec-title">Scenarios for 5-Year Horizon (FY26–FY31)</div>
+    <div class="three-col">
+      <div class="mini-card" style="border:1px solid #f09595">
+        <div class="mc-title" style="color:#791F1F">Bear Case</div>
+        <div class="bullet">• PLI not renewed; mobile margins compress to 2–3%<br>• Vivo JV delayed further; volumes miss targets<br>• Revenue CAGR slows to 15–20% over 5yr<br>• EBITDA margins stay 3.2–3.5%<br>• Stock re-rates to 25–30x earnings</div>
+      </div>
+      <div class="mini-card" style="border:1px solid #185FA5">
+        <div class="mc-title" style="color:#185FA5">Base Case</div>
+        <div class="bullet">• PLI 2.0 approved; backward integration lifts margins<br>• Vivo JV operational by FY27; 55–60mn phones/yr<br>• Revenue CAGR: 30–35% over 5yr<br>• EBITDA margins expand to 4.5–5%<br>• Stock re-rates to 40–50x earnings</div>
+      </div>
+      <div class="mini-card" style="border:1px solid #3B6D11">
+        <div class="mc-title" style="color:#3B6D11">Bull Case</div>
+        <div class="bullet">• Display fab + camera modules: 100–150 bps margin boost<br>• Export revenues scale to $1bn+ by FY28<br>• Revenue CAGR: 40–45% over 5yr<br>• Laptop/IT hardware becomes 3rd revenue pillar<br>• Stock re-rates to 60–70x, returning to prior highs</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:#94a3b8">Scenarios based on historical trends only — not forecasts or guarantees.</div>
+  </div>
+</div>
+
+<!-- TAB 4: RETURNS -->
+<div id="t4" style="display:none">
+  <div class="card">
+    <div class="sec-title">Return Ratios</div>
+    <table>
+      <tr><th>Metric</th><th>FY25 (Current)</th><th>3-Yr Avg</th><th>5-Yr Avg</th><th>Status</th></tr>
+      <tr><td>ROE</td><td>32.8%</td><td>28.1%</td><td>~22–25%</td><td><span class="badge b-green">GOOD (&gt;15%)</span></td></tr>
+      <tr><td>ROCE</td><td>40.0% (Screener) / 35%+ (ICICI)</td><td>~25–30%</td><td>~22%</td><td><span class="badge b-green">EXCELLENT</span></td></tr>
+      <tr><td>ROIC</td><td>24.1%</td><td>~20%</td><td>~18%</td><td><span class="badge b-green">GOOD</span></td></tr>
+    </table>
+    <div style="margin-top:10px;font-size:12px;color:#64748b">ROCE of 35–40%+ is exceptional for a manufacturing company. This means Dixon earns ₹35–40 for every ₹100 of capital deployed — a genuine competitive edge.</div>
+  </div>
+  <div class="card">
+    <div class="sec-title">Dividend History (Last 5 Years)</div>
+    <table>
+      <tr><th>Year</th><th>DPS (₹)</th><th>Payout Ratio</th><th>Notes</th></tr>
+      <tr><td>FY21</td><td>2</td><td>~5%</td><td>—</td></tr>
+      <tr><td>FY22</td><td>4</td><td>~4%</td><td>—</td></tr>
+      <tr><td>FY23</td><td>5</td><td>~3.5%</td><td>—</td></tr>
+      <tr><td>FY24</td><td>6</td><td>~3%</td><td>—</td></tr>
+      <tr><td>FY25</td><td>8</td><td>~2%</td><td>Div yield: 0.08%</td></tr>
+    </table>
+    <div style="margin-top:8px;font-size:12px;color:#64748b">Dixon prioritises reinvestment over dividends — payout ratio is very low (~2–5%). This is appropriate for a high-growth EMS company in expansion mode. Dividend is token, not a yield play.</div>
+    <div style="margin-top:10px">
+      <span class="badge b-green" style="font-size:12px">HIGH-QUALITY COMPOUNDER</span>
+      <span class="badge b-gray" style="margin-left:6px;font-size:12px">NOT a Dividend Play</span>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5: PEERS -->
+<div id="t5" style="display:none">
+  <div class="card">
+    <div class="sec-title">Peer Comparison — EMS / Consumer Electronics</div>
+    <table>
+      <tr><th>Company</th><th>P/E (TTM)</th><th>ROE</th><th>Rev CAGR (3yr)</th><th>D/E</th><th>EBITDA Margin</th><th>Standing</th></tr>
+      <tr class="highlight-row"><td>Dixon Tech (DIXON)</td><td>38–44x</td><td>32.8%</td><td>~54%</td><td>0.19x</td><td>3.9%</td><td><span class="badge b-blue">LEADING</span></td></tr>
+      <tr><td>Amber Enterprises (AMBER)</td><td>~75x</td><td>~11%</td><td>~20%</td><td>~0.8x</td><td>~6–7%</td><td><span class="badge b-amber">MID-PACK</span></td></tr>
+      <tr><td>Kaynes Technology (KAYNES)</td><td>~65–80x</td><td>~15%</td><td>~40%</td><td>~0.5x</td><td>~12–15%</td><td><span class="badge b-amber">MID-PACK</span></td></tr>
+      <tr><td>Syrma SGS (SYRMA)</td><td>~39–50x</td><td>~10%</td><td>~34%</td><td>~0.4x</td><td>~8–10%</td><td><span class="badge b-gray">MID-PACK</span></td></tr>
+    </table>
+    <div style="margin-top:8px;font-size:12px;color:#64748b">Dixon leads peers on Revenue CAGR and ROE/ROCE but has thinner EBITDA margins (typical for its high-volume smartphone-EMS mix). Its P/E is now cheaper than Amber and Kaynes, a reversal from 2024. Source: Equitymaster, Jefferies Oct 2025, ICICI Direct.</div>
+  </div>
+  <div class="card">
+    <div class="sec-title">Top 5 Recent News (Investor-Relevant)</div>
+    <table>
+      <tr><th>Date</th><th>Headline</th><th>Significance</th></tr>
+      <tr><td>10 Mar 2026</td><td>MeitY approves HKC display module JV</td><td><span class="badge b-green">POSITIVE</span> — removes key overhang; margin expansion catalyst</td></tr>
+      <tr><td>02 Mar 2026</td><td>Nomura: Dixon well-placed for PLI 2.0</td><td><span class="badge b-green">POSITIVE</span> — PLI 2.0 could add further earnings upside</td></tr>
+      <tr><td>Jan 2026</td><td>DRAM prices rising 55–60% Q1 2026; volume guidance cut to 37–37.5mn units</td><td><span class="badge b-red">NEGATIVE</span> — near-term margin/volume pressure</td></tr>
+      <tr><td>Jan 2026</td><td>HSBC cuts target to ₹15,500 (from ₹19,600); maintains Buy</td><td><span class="badge b-amber">MIXED</span> — bullish long-term, cautious short-term</td></tr>
+      <tr><td>Feb 2026</td><td>Josh Foulger (ex-Foxconn) appointed President – IT Hardware at Padget Electronics</td><td><span class="badge b-green">POSITIVE</span> — signals IT hardware ambitions with experienced leadership</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- TAB 6: OWNERSHIP -->
+<div id="t6" style="display:none">
+  <div class="card">
+    <div class="sec-title">Promoter Holding — Quarterly Trend</div>
+    <table>
+      <tr><th>Quarter</th><th>Promoter %</th><th>Change</th></tr>
+      <tr><td>Jun 2024</td><td>33.2%</td><td>—</td></tr>
+      <tr><td>Sep 2024</td><td>32.9%</td><td>-0.3%</td></tr>
+      <tr><td>Dec 2024</td><td>32.4%</td><td>-0.5%</td></tr>
+      <tr><td>Mar 2025</td><td>32.3%</td><td>-0.1%</td></tr>
+      <tr><td>Sep 2025</td><td>28.91%</td><td>-3.4% (large step-down)</td></tr>
+      <tr><td>Dec 2025</td><td>28.83%</td><td>-0.08%</td></tr>
+    </table>
+    <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+      <span class="badge b-red">SELLING — promoter down ~5.2% in 3 years</span>
+      <span class="badge b-gray">Pledging: 0% (No pledge)</span>
+    </div>
+    <div style="margin-top:8px;font-size:12px;color:#64748b">Promoter selling is a watch point — though it may reflect personal diversification or QIP-related dilution from JV fundraising. No pledging is a positive.</div>
+  </div>
+  <div class="card">
+    <div class="sec-title">FII &amp; DII Holding — Quarterly Trend</div>
+    <table>
+      <tr><th>Quarter</th><th>FII %</th><th>DII %</th><th>Public %</th></tr>
+      <tr><td>Jun 2024</td><td>19.3%</td><td>26.1%</td><td>21.3%</td></tr>
+      <tr><td>Sep 2024</td><td>22.7%</td><td>23.1%</td><td>21.3%</td></tr>
+      <tr><td>Dec 2024</td><td>23.2%</td><td>22.6%</td><td>21.7%</td></tr>
+      <tr><td>Mar 2025</td><td>21.8%</td><td>23.1%</td><td>22.9%</td></tr>
+      <tr><td>Sep 2025</td><td>20.7%</td><td>28.9%</td><td>~21.5%</td></tr>
+      <tr><td>Dec 2025</td><td>18.68%</td><td>29.06%</td><td>23.43%</td></tr>
+    </table>
+    <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+      <span class="badge b-red">FII: DECREASING</span>
+      <span class="badge b-green">DII: INCREASING strongly</span>
+      <span class="badge b-amber">Management Tone: CAUTIOUS</span>
+    </div>
+    <div style="margin-top:8px;font-size:12px;color:#64748b">DII buying is a positive signal — domestic MFs are accumulating even as FIIs reduce. Overall Ownership Signal: <span class="badge b-amber">MIXED — DII confidence positive; FII exit &amp; promoter selling are watchpoints</span></div>
+  </div>
+</div>
+
+<!-- TAB 7: VIEW (DEFAULT) -->
+<div id="t7" style="display:block">
+  <div class="verdict-mod">
+    <div class="vt">🟡 MODERATE — 5-Year Horizon</div>
+    <div class="vdesc">Dixon is a structurally strong EMS leader with exceptional ROCE and explosive revenue growth, but faces near-term execution risks (DRAM prices, PLI expiry, pending Vivo JV approval) that create uncertainty for the first 1–2 years of your 5-year horizon. The stock at ₹9,887 is deeply discounted vs its own history, offering a margin of safety — but patience and risk tolerance are required.</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+      <span class="badge b-green" style="font-size:12px;padding:4px 14px">STRONG FUNDAMENTALS</span>
+      <span style="font-size:13px;color:#64748b">India's largest Android phone manufacturer with 54% revenue CAGR (3yr), 40%+ ROCE, and a clear decade-long structural tailwind from the India EMS opportunity — currently mispriced due to near-term headwinds.</span>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <span class="tag t-quality">Quality</span>
+      <span class="tag t-growth">Growth</span>
+      <span class="tag t-cyclical">Cyclical (policy-sensitive)</span>
+    </div>
+  </div>
+  <div class="three-col">
+    <div class="mini-card">
+      <div class="mc-title" style="color:#15803d">✓ Strengths</div>
+      <div class="bullet">✓ ROCE of 35–40%+ — exceptional for a manufacturer; capital is being compounded at high rates<br><br>✓ Revenue grew 120% YoY in FY25 — fastest-growing EMS company in India with diversified blue-chip client base<br><br>✓ Backward integration underway (display modules, camera, batteries) — structurally widening moat and margins</div>
+    </div>
+    <div class="mini-card">
+      <div class="mc-title" style="color:#b45309">⚠ Watch Points</div>
+      <div class="bullet">⚠ Promoter stake down 5.2% over 3 years and FII selling — needs monitoring for intent and scale<br><br>⚠ EBITDA margins thin at 3.9%; PLI expiry (Mar 2026) removes 60 bps tailwind; FCF is weak due to capex cycle</div>
+    </div>
+    <div class="mini-card">
+      <div class="mc-title" style="color:#185FA5">→ Track This</div>
+      <div class="bullet">→ Vivo JV government approval — this single event can re-rate the stock significantly, as it represents ₹18,000–20,000 Cr incremental revenue opportunity.<br><br>Also track: mobile volume run-rate vs 40mn target; PLI 2.0 announcement; display module plant operational timeline (Q2 FY27)</div>
+    </div>
+  </div>
+  <div class="two-col" style="margin-top:10px">
+    <div class="mini-card">
+      <div class="mc-title" style="color:#15803d">+ Opportunities</div>
+      <div class="bullet">+ India EMS market projected 30% CAGR FY25–28; Dixon is the market leader positioned to capture the lion's share<br>+ Display fab JV (HKC, approved Mar 2026) + camera modules = 100–150 bps margin expansion by FY28<br>+ IT Hardware (laptops for HP, ASUS, Lenovo, Acer) + Telecom equipment = new revenue pillars beginning FY27</div>
+    </div>
+    <div class="mini-card">
+      <div class="mc-title" style="color:#b91c1c">− Risks</div>
+      <div class="bullet">− DRAM prices rising 55–60% in Q1 2026 — squeezes smartphone margins and forces volume downgrades<br>− Vivo JV regulatory risk: SFIO probe into Chinese OEMs creates overhang on approval<br>− High client concentration — Motorola (45%+ of FY25 revenue) already losing share; any client derisking can hurt near-term volumes</div>
+    </div>
+  </div>
+  <div class="blue-card" style="margin-top:10px">
+    <strong>Timeline Match — 5-Year Horizon</strong><br><br>
+    Dixon is a well-suited stock for a 5-year investor who can stomach 12–18 months of execution uncertainty. The near-term (FY26–FY27) is clouded by PLI expiry, DRAM pressures, and JV approval delays — but these are cyclical and policy headwinds, not structural impairments. The 5-year structural story — India becoming a global electronics hub, Dixon as its largest EMS beneficiary, backward integration improving margins, and a market cap of ₹60,000 Cr that is 46% below its peak — aligns well with a patient 5-year investor. Entry at current levels (~₹9,887) offers the stock at its multi-year low P/E (~38–44x vs 10-yr median of 92x).
+  </div>
+  <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+    <span style="font-size:12px;color:#64748b;font-weight:600">Business Type:</span>
+    <span class="badge b-blue">STRUCTURAL</span>
+    <span style="font-size:12px;color:#64748b;font-weight:600;margin-left:6px">Moat:</span>
+    <span class="badge b-amber">MODERATE (scale + relationships)</span>
+    <span style="font-size:12px;color:#64748b;font-weight:600;margin-left:6px">Capital Allocation:</span>
+    <span class="badge b-green">EXCELLENT</span>
+    <span style="font-size:12px;color:#64748b;font-weight:600;margin-left:6px">Mgmt Quality:</span>
+    <span class="badge b-green">HIGH TRUST</span>
+  </div>
+</div>
+
+<div class="footer">
+  This tool is for fundamental screening and financial education only. Data sourced from NSE, BSE, Screener.in, ICICI Direct, Moneycontrol, and public filings. This is NOT investment advice, a buy/sell recommendation, or SEBI-registered research. AI can make errors — verify all numbers independently at NSE/BSE/Screener before acting. Past performance does not guarantee future results. Investing involves risk. Consult a SEBI-registered investment advisor before making any decision.
+</div>
+</div>
+
+<script>
+function showTab(n){
+  for(var i=0;i<8;i++){
+    var t=document.getElementById('t'+i);
+    if(t) t.style.display=i===n?'block':'none';
+  }
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(tab,i){
+    tab.classList.toggle('active',i===n);
+  });
+}
+</script>
+</body>
+</html>
