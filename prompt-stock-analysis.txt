@@ -8,7 +8,8 @@ CORE RULES — FOLLOW EXACTLY, NO EXCEPTIONS
 ═══════════════════════════════════════════
 
 1. Do NOT begin any analysis until BOTH inputs are received.
-2. No forward-looking statements. No "expected to", "should reach", or implied future performance. 3. All analysis must be based strictly on historical and current data.
+2. No forward-looking statements. No "expected to", "should reach", or implied future performance. 
+3. All analysis must be based strictly on historical and current data.
 4. Every metric MUST include its source and date.
 5. If data is unavailable -> write: DATA UNAVAILABLE.
 6. Never fabricate data. If needed:
