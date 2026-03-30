@@ -1,1 +1,1 @@
-# stock-prompt
+# Prompt for stock analysis - Claude
